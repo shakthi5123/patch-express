@@ -1,59 +1,59 @@
 //Basic about patch request
-import express from "express";
-const app = express();
-const port = 3000;
+// import express from "express";
+// const app = express();
+// const port = 3000;
 
-app.use(express.json());
+// app.use(express.json());
 
-let users = {
-    1: {name: "shakthi", age: 21, email: "shakthi@example.com"}
-}
+// let users = {
+//     1: {name: "shakthi", age: 21, email: "shakthi@example.com"}
+// }
 
-app.patch("/users/:id", (req, res) => {
-    const userId = req.params.id;
-    const updates = req.body;
+// app.patch("/users/:id", (req, res) => {
+//     const userId = req.params.id;
+//     const updates = req.body;
 
-    if(!users[userId]){
-        return res.status(404).send("User not found");
-    }
+//     if(!users[userId]){
+//         return res.status(404).send("User not found");
+//     }
 
-    // Update only provided fields
-    users[userId] = {...users[userId], ...updates}
-    res.send(`User  ${userId} updated ${JSON.stringify(users[userId])}`);
-})
+//     // Update only provided fields
+//     users[userId] = {...users[userId], ...updates}
+//     res.send(`User  ${userId} updated ${JSON.stringify(users[userId])}`);
+// })
 
-app.listen(port, ()=> {
-    console.log(`Server is running on http://localhost:${port}`);
-})
+// app.listen(port, ()=> {
+//     console.log(`Server is running on http://localhost:${port}`);
+// })
 
 // Challenge with patch request
 
-import express from "express";
-const app = express();
-const port = 3000;
+// import express from "express";
+// const app = express();
+// const port = 3000;
 
-app.use(express.json());
+// app.use(express.json());
 
-let books = {
-  1: { title: "Atomic Habits", author: "James Clear", year: 2018 },
-  2: { title: "The Alchemist", author: "Paulo Coelho", year: 1988 },
-};
+// let books = {
+//   1: { title: "Atomic Habits", author: "James Clear", year: 2018 },
+//   2: { title: "The Alchemist", author: "Paulo Coelho", year: 1988 },
+// };
 
-app.patch("/books/:id", (req, res) => {
-    const bookId = req.params.id;
-    const updates = req.body;
+// app.patch("/books/:id", (req, res) => {
+//     const bookId = req.params.id;
+//     const updates = req.body;
 
-    if(!books[bookId]) {
-        return res.status(404).send("Book not found");
-    }
+//     if(!books[bookId]) {
+//         return res.status(404).send("Book not found");
+//     }
 
-    books[bookId] = {...books[bookId], ...updates}
-    res.send(`Books with ${bookId} updated: ${JSON.stringify(books[bookId])}`);
-});
+//     books[bookId] = {...books[bookId], ...updates}
+//     res.send(`Books with ${bookId} updated: ${JSON.stringify(books[bookId])}`);
+// });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server is running on http://localhost:${port}`);
+// });
 
 // Challenge 3 
 
